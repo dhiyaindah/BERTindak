@@ -1,0 +1,26 @@
+pip install flask-login==0.6.3
+
+pip install flask-wtf==1.2.2
+
+pip install torch torchvision torchaudio
+
+pip install typing-extensions==4.5.0
+
+pip uninstall tensorflow-intel
+>> pip install tensorflow==2.15.0
+>> pip install typing-extensions==4.15.0
+
+pip install indoNLP
+pip install sentence-transformers
+
+pip install datasets
+
+pip install hyperopt
+
+pip install waitress
+
+pip install flask-mail
+
+pip install openpyxl
+
+pip install accelerate>=0.26.0

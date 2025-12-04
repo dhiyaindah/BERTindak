@@ -1,0 +1,55 @@
+# ===========================
+# Python & Virtual Environment
+# ===========================
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# ===========================
+# Streamlit
+# ===========================
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# ===========================
+# Model & Large Files
+# ===========================
+*.pth
+*.pt
+*.bin
+*.h5
+*.ckpt
+
+# HuggingFace cache
+huggingface/
+hf_cache/
+cache/
+transformers_cache/
+
+# ===========================
+# Jupyter & Logs
+# ===========================
+.ipynb_checkpoints/
+*.log
+
+# ===========================
+# OS / Editor Files
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===========================
+# Build / output files
+# ===========================
+dist/
+build/
