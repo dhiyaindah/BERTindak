@@ -48,48 +48,72 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Form dengan desain card modern
+
+# CSS untuk override background
+st.markdown("""
+<style>
+    /* Force white background for the form */
+    div[data-testid="stForm"] {
+        background-color: white !important;
+        padding: 20px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+        border: 1px solid #e0e0e0 !important;
+    }
+    
+    /* Make sure all form elements are white */
+    .stTextArea, .stButton {
+        background-color: white !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Form langsung dengan background putih
 with st.form("form_prediksi"):
     st.markdown("""
         <div class="form-container">
             <h3 class="form-title">
                 📋 Input Data Kasus
             </h3>
-            <div class="input-container">
+            
     """, unsafe_allow_html=True)
-    
+    # Form fields
     riwayat_tuntutan = st.text_area(
-        "Riwayat Tuntutan", 
-        placeholder="Masukkan riwayat tuntutan kasus di sini..."
+        "**Riwayat Tuntutan**", 
+        placeholder="Masukkan riwayat tuntutan kasus di sini...",
+        height=100
     )
     
     fakta = st.text_area(
-        "Fakta", 
-        placeholder="Jelaskan fakta-fakta yang terungkap dalam persidangan..."
+        "**Fakta**", 
+        placeholder="Jelaskan fakta-fakta yang terungkap dalam persidangan...",
+        height=100
     )
     
     fakta_hukum = st.text_area(
-        "Fakta Hukum", 
-        placeholder="Jelaskan fakta hukum yang relevan dengan kasus..."
+        "**Fakta Hukum**", 
+        placeholder="Jelaskan fakta hukum yang relevan dengan kasus...",
+        height=100
     )
     
     pertimbangan_hukum = st.text_area(
-        "Pertimbangan Hukum", 
-        placeholder="Jelaskan pertimbangan hukum yang digunakan..."
+        "**Pertimbangan Hukum**", 
+        placeholder="Jelaskan pertimbangan hukum yang digunakan...",
+        height=100
     )
     
-    st.markdown("</div>", unsafe_allow_html=True)  # Tutup container input fields
-    
-    # Tombol submit dengan styling yang menarik
+    # Tombol submit
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         submitted = st.form_submit_button(
-            "Prediksi Kategori Hukuman", 
+            "**Prediksi Kategori Hukuman**", 
             use_container_width=True
         )
 
-    st.markdown("</div>", unsafe_allow_html=True)  # Tutup card form
+# 4. TUTUP CARD
+st.markdown("</div>", unsafe_allow_html=True)
 
+# Logika prediksi (DI LUAR card)
 if submitted:
     if not riwayat_tuntutan or not fakta or not fakta_hukum or not pertimbangan_hukum:
         # Desain warning
